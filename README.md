@@ -6,4 +6,4 @@ These files are often SVG images or large images that don't work well with the P
 are converted to the images in **original_images** folder. Large images are scaled down and the original SVG images are exported 
 as small PNG images.  The **original_images** are used to create the PPM files for the students.
 
-The **example_&ast;** folders ontain examples of the PPM file that students are given as well as several possible conversions.
+The **example\_&ast;** folders contain examples of the PPM file that students are given as well as several possible conversions.

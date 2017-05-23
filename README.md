@@ -5,3 +5,5 @@ The **source_images** folder contains the original images downloaded from the in
 These files are often SVG images or large images that don't work well with the PPM/SVG assignment.  Therefore, the source files 
 are converted to the images in **original_images** folder. Large images are scaled down and the original SVG images are exported 
 as small PNG images.  The **original_images** are used to create the PPM files for the students.
+
+The **example_&ast;** folders ontain examples of the PPM file that students are given as well as several possible conversions.

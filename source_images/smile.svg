@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="svg4376"
+   viewBox="0 0 37.087837 37.087837"
+   sodipodi:version="0.32"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="smile.svg"
+   version="1.1"
+   inkscape:export-filename="/Users/nicholsonja/Documents/research/2017-CCSC-SE/code/original_images/smile.png"
+   inkscape:export-xdpi="184.42999"
+   inkscape:export-ydpi="184.42999"
+   width="37.087837"
+   height="37.087837">
+  <defs
+     id="defs3">
+    <radialGradient
+       id="radialGradient2714"
+       fx="29.158001"
+       fy="15.756"
+       cx="29.288"
+       gradientUnits="userSpaceOnUse"
+       cy="15.721"
+       r="8.9020996"
+       inkscape:collect="always">
+      <stop
+         id="stop3292"
+         style="stop-color:#fffcde"
+         offset="0" />
+      <stop
+         id="stop3294"
+         style="stop-color:#f6e76a"
+         offset=".64486" />
+      <stop
+         id="stop3296"
+         style="stop-color:#ffb738"
+         offset="1" />
+    </radialGradient>
+    <radialGradient
+       id="aigrd2"
+       gradientUnits="userSpaceOnUse"
+       cy="39.592999"
+       cx="25.052999"
+       gradientTransform="matrix(1.25,0,0,1.25,-6.4794,-13.372)"
+       r="15.757">
+      <stop
+         id="stop8602"
+         style="stop-color:#777777"
+         offset="0" />
+      <stop
+         id="stop8604"
+         style="stop-color:#000000"
+         offset="1" />
+    </radialGradient>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     bordercolor="#666666"
+     inkscape:window-x="0"
+     inkscape:window-y="1"
+     pagecolor="#ffffff"
+     inkscape:showpageshadow="false"
+     inkscape:grid-bbox="true"
+     inkscape:zoom="16.09091"
+     inkscape:pageshadow="2"
+     showgrid="false"
+     borderopacity="0.19607843"
+     inkscape:current-layer="layer1"
+     inkscape:cx="-11.115825"
+     inkscape:cy="21.768628"
+     inkscape:window-width="1394"
+     inkscape:pageopacity="0.0"
+     inkscape:window-height="855"
+     inkscape:document-units="px"
+     fill="#edd400"
+     inkscape:window-maximized="1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <g
+     id="layer1"
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     transform="translate(-5.7199419,-4.5609404)">
+    <circle
+       id="path4320"
+       style="color:#000000;fill:url(#radialGradient2714);fill-rule:evenodd;stroke:#9c8c0a;stroke-width:0.48004001;stroke-linecap:round;stroke-linejoin:round"
+       transform="matrix(2.0831,0,0,2.0831,-40.547,-16.492)"
+       cx="31.112698"
+       cy="19.008621"
+       r="8.6620579" />
+    <circle
+       id="path4322"
+       style="color:#000000;opacity:0.67722;fill:none;stroke:#ffffff;stroke-width:0.50511003;stroke-linecap:round;stroke-linejoin:round"
+       transform="matrix(1.9798,0,0,1.9798,-37.331,-14.527)"
+       cx="31.112698"
+       cy="19.008621"
+       r="8.6620579" />
+    <path
+       id="path2659"
+       sodipodi:nodetypes="czczc"
+       style="color:#000000;opacity:0.36000001;fill:#ffffff"
+       d="m 37.285,24.72 c -3.017,5.225 -6.544,8.99 -12.823,8.99 -6.1,0 -10.565,-4.34 -13.352,-9.167 2.549,3.056 6.283,6.567 13.087,6.567 8.131,0 9.552,-2.907 13.088,-6.39 z"
+       inkscape:connector-curvature="0" />
+    <path
+       id="path8606"
+       sodipodi:nodetypes="czczc"
+       style="fill:url(#aigrd2)"
+       d="m 37.285,24.013 c -3.017,5.225 -6.544,8.99 -12.823,8.99 -6.1,0 -10.565,-4.34 -13.352,-9.167 2.549,3.056 6.283,6.566 13.087,6.566 8.131,0 9.552,-2.906 13.088,-6.389 z"
+       inkscape:connector-curvature="0" />
+    <g
+       id="g8666"
+       transform="translate(0.35355,2.3927)">
+      <path
+         id="path8610"
+         style="opacity:0.36000001;fill:#ffffff"
+         d="m 21.398,15.321 c 0,2.5 -1.125,4.5 -2.5,4.5 -1.375,0 -2.625,-2 -2.625,-4.5 0,-2.5 1.125,-4.5 2.5,-4.5 1.375,0 2.5,2 2.5,4.5 l 0.125,0 z"
+         inkscape:connector-curvature="0" />
+      <path
+         id="path8612"
+         style="opacity:0.36000001;fill:#ffffff"
+         d="m 30.689,15.321 c 0,2.5 -1.125,4.5 -2.5,4.5 -1.375,0 -2.5,-2 -2.5,-4.5 0,-2.5 1.125,-4.5 2.5,-4.5 1.375,0 2.5,2 2.5,4.5 z"
+         inkscape:connector-curvature="0" />
+      <path
+         id="path8614"
+         style="fill:#000000"
+         d="m 21.398,14.696 c 0,2.5 -1.125,4.5 -2.5,4.5 -1.375,0 -2.5,-2 -2.5,-4.5 0,-2.5 1.125,-4.5 2.5,-4.5 1.375,0 2.5,2 2.5,4.5 z"
+         inkscape:connector-curvature="0" />
+      <path
+         id="path8616"
+         style="fill:#000000"
+         d="m 30.689,14.696 c 0,2.5 -1.125,4.5 -2.5,4.5 -1.375,0 -2.5,-2 -2.5,-4.5 0,-2.5 1.125,-4.5 2.5,-4.5 1.375,0 2.5,2 2.5,4.5 z"
+         inkscape:connector-curvature="0" />
+    </g>
+  </g>
+  <metadata
+     id="metadata26">
+    <rdf:RDF>
+      <cc:Work>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <cc:license
+           rdf:resource="http://creativecommons.org/publicdomain/zero/1.0/" />
+        <dc:publisher>
+          <cc:Agent
+             rdf:about="http://openclipart.org/">
+            <dc:title>Openclipart</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:title>tango face smile</dc:title>
+        <dc:date>2010-03-08T08:40:05</dc:date>
+        <dc:description>Smiley icon from Tango Project: http://tango.freedesktop.org/Tango_Desktop_Project
+\n&lt;br&gt;&lt;br&gt;
+\nTango Project icons are Public Domain.</dc:description>
+        <dc:source>https://openclipart.org/detail/30217/tango-face-smile-by-warszawianka</dc:source>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>warszawianka</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>emote</rdf:li>
+            <rdf:li>happy</rdf:li>
+            <rdf:li>icon</rdf:li>
+            <rdf:li>smile</rdf:li>
+            <rdf:li>smiley</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+      </cc:Work>
+      <cc:License
+         rdf:about="http://creativecommons.org/publicdomain/zero/1.0/">
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Reproduction" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Distribution" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+</svg>

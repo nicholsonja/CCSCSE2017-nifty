@@ -7,3 +7,11 @@ are converted to the images in **original_images** folder. Large images are scal
 as small PNG images.  The **original_images** are used to create the PPM files for the students.
 
 The **example\_&ast;** folders contain examples of the PPM file that students are given as well as several possible conversions.
+Inside each folder are a set of files, one PPM and several SVG files.  The PPM file is the file given to the students.  The SVG 
+files are created by the students' programs.
+
+In these examples, the files begin with common prefixes:
+
+* **INPUT\_** : the PPM file given to students.
+* **circle\_** : in these examples each pixel in the PPM is converted to grayscale, and then an SVG `<circle/>` element is generated.  
+The circle's radius is proportional to the gray level of the pixel.

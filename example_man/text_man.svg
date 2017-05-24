@@ -1,4 +1,5 @@
 <svg xmlns='http://www.w3.org/2000/svg' width='750.0' height='940.0' version='1.1'>
+    <rect x='0' y='0' height='940.0' width='750.0' fill='#ffffff' />
 <text text-anchor='middle'  x='0.0'  y='10.0'  font-size='10.0'  font-weight='bold'  fill='rgb(255,255,255)' >M</text>
 <text text-anchor='middle'  x='10.0'  y='10.0'  font-size='10.0'  font-weight='bold'  fill='rgb(255,255,255)' >A</text>
 <text text-anchor='middle'  x='20.0'  y='10.0'  font-size='10.0'  font-weight='bold'  fill='rgb(255,255,255)' >N</text>

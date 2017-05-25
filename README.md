@@ -1,4 +1,4 @@
-This is a collection of samples for the Nifty assignment "Converting PPM images to SVG images: a nifty assignment" 
+This is a collection of examples for the Nifty assignment "Converting PPM images to SVG images: a nifty assignment" 
 at the 2017 CCSC:SE Conference to be held at Furman University November 3-4, 2017. 
 
 The **source_images** folder contains the original images downloaded from the internet (attribution can be found in the folder). 

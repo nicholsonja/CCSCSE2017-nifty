@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">  
+    <title>Converting PPM to SVG</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+    <h1>Converting PPM to SVG</h1>
+    <h2>Background</h2>
+    <p>
+        The PPM format is a bitmap format for images.  It contains data that
+        defines the height and width of an image in pixels,
+        and then contains information that defines
+        the color of every pixel.  The SVG format is a vector format for images.
+        Rather than defining individual pixels, it defines shapes - their sizes,
+        paths, coordinates and colors.  In this assignment,
+        you will convert PPM images to SVG, changing the way they look
+        and making them a little more artistic.
+    </p>
+    <h2>PPM File Format</h2>
+    <p>
+        The PPM format is fairly straightforward.  Below you see the beginning
+        of an example PPM file:
+    </p>
+    <blockquote><pre>
+    P3
+    100 83
+    255
+    255 0 0
+    255 255 128
+    0 0 100
+    50 42 130
+    ...
+    </pre></blockquote>
+    <p>
+        The <code>P3</code> means this is a PPM file.  The next line contains the width and the height.
+        In this case, this image will have a width of 100 pixels and a height of 83 pixels.
+        The third line, which has the lone <code>255</code>, means that the data in the file
+        will contain integers in the range 0 to 255.
+    </p>
+    <p>
+        The remaining lines are the color data for each pixel.  Because this image is 100x83,
+        there will be 8300 lines in the file after the first 3 header lines.
+        
+        Each line represents
+        one pixel, and the first pixel, that is the first triplet, is the pixel in
+        the upper left corner of the image, and the next pixels moves across the row.
+        When the row is finished the next value will start the next line.
+    </p>
+    <p>
+        The line for each pixel will have three integers in the range 0 to 255, which is
+        the RGB color value for the pixel.  The first integer represents the
+        red (R) channel, the second integer represents the green (G) channel, and the third integer represents
+        the blue (B) channel. 0 means that channel
+        is turned completely off, 255 means it is completely on, and
+        any value in between the color is turned on part way. Example colors would be:
+        <code>0 0 0</code> is black, <code>255 255 255</code> is white,
+        and <code>255 0 0</code> is red.
+    </p>
+    <h2>SVG File Format</h2>
+    <p>
+      The SVG file format is used for vector images, which
+      are images that you can zoom in infinitely without pixelization.
+      It is more complex than the PPM format, but with that complexity comes
+      a lot of flexibility, which allows us to create complex images
+      rather easily.
+    </p>
+    <p>
+      It is very important that you read this format closely.  If you leave out
+      just one symbol or type the wrong letter, your file may not work.
+      Be careful about adding extra spaces, even those can corrupt your
+      SVG file.  For example, <code>&lt;/svg&gt;</code> is correct,
+      but both <code>&lt; /svg&gt;</code> and <code>&lt;/ svg&gt;</code>
+      are incorrect because of the extra space added to each one.
+      The details in this format are important.
+   </p>
+   <h3>First Line</h3>
+   <p>
+      The first line of an SVG file has the <code>svg</code> start tag, which looks like this
+   </p>
+   <blockquote><code>
+      &lt;svg xmlns='http://www.w3.org/2000/svg' width='600' height='600' version='1.1'&gt;
+   </code></blockquote>
+   <p>
+      Everything needs to be there. The &lt;, the &gt;, the single quote, and so on.
+      The values for width and height can change.  
+   </p>
+   
+   <h3>Last Line</h3>
+   <p>
+      The last line of an SVG file has the <code>svg</code> end tag, which is simply:
+   </p>
+   <blockquote><code>
+      &lt;/svg&gt;
+   </code></blockquote>
+   <p>
+      That's it. That's all.  Nothing else.      
+   </p>
+   
+   <h3>Shapes</h3>
+   <p>
+      All the lines for the shapes go between the <code>svg</code> start tag
+      and the <code>svg</code> end tag.  Three basic shapes that we will support are
+   </p>
+   <ul>
+      <li>Circles</li>
+      <li>Squares</li>
+      <li>Triangles</li>
+   </ul>
+   <p>
+      The SVG coordinate system places (0,0) in the top-left corner of the
+      page.  As you move right, x increases.  As you move down, y increases.
+   </p>
+   
+   <h4>Circles</h4>
+   <p>
+      A circle is generated with the <code>circle</code> tag, which looks like this:
+   </p>
+   <blockquote><code>
+      &lt;circle cx='250' cy='250' r='50'  fill='rgb(0,0,255)' /&gt;
+   </code></blockquote>
+   <p>
+      where
+   </p>
+   <ul>
+      <li>cx and cy are the center coordinates for the circle</li>
+      <li>r is the radius</li>
+      <li>fill is the color in rgb notation</li>
+   </ul>
+   
+   <h4>Squares</h4>
+   <p>
+      A square is generated with the <code>rect</code> tag, which looks like this:
+   </p>
+   <blockquote><code>
+      &lt;rect x='200' y='400' height='100' width='100'  fill=''rgb(100,0,2)' /&gt;
+   </code></blockquote>
+   <p>
+      where
+   </p>
+   <ul>
+      <li>x and y are the coordinates of the upper-left corner of the square</li>
+      <li>height and width are the size of the rectangle. Obviously for a square they should have the same value</li>
+      <li>fill is the color in rgb notation</li>
+   </ul>
+   
+   
+   <h4>Triangles</h4>
+   <p>
+      There is no triangle tag in the SVG format.
+      Instead, we use the general-purpose <code>polygon</code> tag, which looks like this:
+   </p>
+   <blockquote><code>
+      &lt;polygon points='300,500 400,500 350,600'  fill='rgb(0,0,0)' /&gt;
+   </code></blockquote>
+   <p>
+      where
+   </p>
+   <ul>
+      <li>
+         points is a series of (x,y) coordinate pairs.
+         <ul>
+            <li>Each x and y is separated by a comma.  </li>
+            <li>Each (x,y) pair is separated by a single space. </li>
+            <li>
+               Do not add extra spaces, otherwise the polygon will be incorrect.
+               For example, in the example above, it would be incorrect to output
+               <blockquote><code>
+                  &lt;polygon points='300,      500 400,500 350,600'  fill='rgb(0,0,0)' /&gt;
+               </code></blockquote>
+               for the first (x,y) pair.  There should not be any spaces on either side of the commas.
+            </li>
+         </ul>
+      </li>
+      <li>
+         fill is the color in RGB notation
+      </li>
+   </ul>
+   <p>
+      You can create other polygons with the <code>polygon</code> tag, just
+      add additional points to the <code>points</code> attribute.
+   </p>
+
+   <h3>Colors</h3>
+   <p>
+      SVG colors are based on the RGB model, just like the PPM format.
+      Colors are made by combining red, blue, and green values.
+      In order to define a color, use <code>rgb(r, g, b)</code>
+      where r, g, and b are integer values that
+      can range from 0 up to and including 255.   Some examples:
+   </p>
+   <ul>
+      <li>white:   		   <code>rgb(255,255,255)</code></li>
+      <li>red:   		      <code>rgb(255,0,0)</code></li>
+      <li>green:		      <code>rgb(0,255,0)</code></li>
+      <li>blue:		      <code>rgb(0,0,255)</code></li>
+      <li>dark sea green:	<code>rgb(143, 188, 143)</code></li>
+      <li>slate blue:	   <code>rgb(106, 90, 205)</code></li>
+      <li>black:		      <code>rgb(0, 0, 0)</code></li>
+   </ul>
+
+   <h3>SVG Sample</h3>
+   <p>
+      Here is a small example of a complete SVG file
+      with two triangles, one circle and one square.
+   </p>
+   <blockquote><code>
+      &lt;svg xmlns='http://www.w3.org/2000/svg' width='600' height='600' version='1.1'&gt;<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;polygon points='0,300 300,300 150,0'  fill='rgb(0,0,255)' /&gt;<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;circle cx='450' cy='150' r='150'  fill='rgb(128,68,250)' /&gt;<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;rect x='0' y='300' height='300' width='300'  fill='rgb(50, 255, 50)' /&gt;<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;polygon points='300,300 600,300, 450,600'  fill='rgb(0,0,0)' /&gt;<br>
+      &lt;/svg>
+   </code></blockquote>
+   <h3>Converting bitmaps to vector</h3>
+   <p>
+      There are many ways to convert bitmap images, PPM in our case, to vector images,
+      SVG for us. For our conversion, we will convert one pixel at a time to some SVG output.
+      One way to think about a pixel is to think of it as a 1x1 square.  When we convert that
+      square to a vector we will still have a square, but it doesn't have to be 1x1.  In
+      our SVG images, we can make that square any size, for example, 10x10.
+   </p>
+   <p>
+      That 10x10 in the SVG image isn't a pixel, it is a box, actually a <em>bounding box</em>.
+      We can draw whatever we want in that bounding box to represent a converted pixel.  Maybe
+      we draw a circle with a radius of 5 centered in the middle of the box.
+      We could also draw a square inside the box, but make the square 8x8.  That would mean there
+      is a little bit of padding between the square we draw and the edge of the bounding box.
+   </p>
+   <p>
+      We don't actually draw the bounding box.  It is simply the limits of where we can draw something
+      for a single, converted pixel.  Each pixel from the original PPM file has its own bounding box.
+   </p>
+
+    <h2>Assignment</h2>
+    <p>
+        You have been given several PPM files.  Your code should prompt the user for three
+        pieces of information:
+    </p>
+    <ol>
+      <li>The name of the PPM file to read.</li>
+      <li>Output shape: circle, square, or triangle.</li>
+      <li>The type of conversions: color or black and white.</li>
+    </ol>
+    <p>
+      Once your program has this information, it should open the requested
+      PPM file and prepare the output file <code>art.svg</code>.  Your code
+      should read each pixel in the PPM file and convert it to the appropriate
+      SVG shape.
+    </p>
+    <p>
+      When determining the width and height of your SVG file, use a
+      bounding box size of 10.  That means you should take the height
+      and width of the PPM file and multiply it by 10.
+    </p>
+    <h3>Output</h3>
+    <p>
+      Each pixel will be converted to one of three shapes and colored
+      one of two ways.
+    </p>
+    <h4>Colored output</h4>
+    <p>
+      If the user requested color, you will output the shape
+      with the same color as the pixel in the PPM file.  For example,
+      if the PPM file has a pixel with the RGB color
+    </p>
+    <blockquote><code>
+      10 255 78
+    </code></blockquote>
+    <p>
+      and the user had requested you to output the shape circle and
+      make the conversion colored, your SVG file would contain this line:
+    </p>
+    <blockquote><code>&lt;circle cx='5' cy='5' r='5'  fill='rgb(10,255,78)' /&gt;</code></blockquote>
+    <p>
+      although the values for <code>cx</code> and <code>cy</code> would change
+      depending on the (x, y) value of the pixel in the PPM file.  The radius is 5
+      since the bounding box is 10x10.
+    </p>
+    <p>
+      To see an example of this output, take a look at
+      <a href="colorCircle_butterfly.svg" target="_blank">colorCircle_butterfly.svg</a>
+    </p>
+    <h4>Black and white output</h4>
+    <p>
+      If the user requested black and white output, you will convert
+      each pixel's color to grayscale using the formula
+      <code>gray = (red + green + blue) / 3</code>.
+      Once you have this value, you will use it to scale the size of
+      the shape.  Basically, the closer the value <code>gray</code> is
+      to 0 the larger the shape and the closer the value is to 255 the
+      smaller to shape.  If the value is 0, then the shape should fit entirely
+      within its bounding box.  If the value is 255, then the shape would
+      invisible, that is no size (if you want to make you files smaller,
+      don't output any shape that has a gray value equal to 0).
+    </p>
+    <p>
+      For example, suppose a pixel had the color
+    </p>
+    <blockquote><code>
+      153 51 255
+    </code></blockquote>
+    <p>
+      and the user had requested a black and white circle conversion.
+      First we convert the PPM color to gray:
+    </p>
+    <blockquote><code>(153 + 51 + 255) / 3 = 459 / 3 = 153.0 = gray</code></blockquote>
+    <p>
+      next we scale the circle's radius since that is used to size
+      circles in the SVH file.  If we use a bounding box size of 10, then a circle
+      that would completely fill the box would have a radius of 5.  Using that,
+      we can compute the radius of the circle based on the value of <code>gray</code>:
+    </p>
+    <blockquote><code>(255 - 153)/255 * 5 = 102/255 * 4 = 0.4 * 5 = 2.0</code></blockquote>
+    <p>
+      Since we want the color black, we use the color <code>rgb(0,0,0)</code>.  The final
+      result for the circle would be:
+    </p>
+    <blockquote><code>&lt;circle cx='5' cy='5' r='2.0'  fill='rgb(0,0,0)' /&gt;</code></blockquote>
+    <p>
+      To see an example of this output, take a look at
+      <a href="circle_butterfly.svg" target="_blank">circle_butterfly.svg</a>
+    </p>
+</body>
+</html>

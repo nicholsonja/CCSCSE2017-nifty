@@ -23,16 +23,16 @@
         The PPM format is fairly straightforward.  Below you see the beginning
         of an example PPM file:
     </p>
-    <blockquote><pre>
-    P3
-    100 83
-    255
-    255 0 0
-    255 255 128
-    0 0 100
-    50 42 130
+    <blockquote><code>
+    P3<br>
+    100 83<br>
+    255<br>
+    255 0 0<br>
+    255 255 128<br>
+    0 0 100<br>
+    50 42 130<br>
     ...
-    </pre></blockquote>
+    </code></blockquote>
     <p>
         The <code>P3</code> means this is a PPM file.  The next line contains the width and the height.
         In this case, this image will have a width of 100 pixels and a height of 83 pixels.
@@ -213,6 +213,10 @@
       &nbsp;&nbsp;&nbsp;&nbsp;&lt;polygon points='300,300 600,300, 450,600'  fill='rgb(0,0,0)' /&gt;<br>
       &lt;/svg>
    </code></blockquote>
+   <p>
+      You can find this code in
+      <a href="svgSample.svg" target="_blank">svgSample.svg</a>.
+   </p>
    <h3>Converting bitmaps to vector</h3>
    <p>
       There are many ways to convert bitmap images, PPM in our case, to vector images,

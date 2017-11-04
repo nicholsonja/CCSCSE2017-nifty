@@ -34,6 +34,11 @@ In these examples, the files begin with common prefixes:
 * **star\_&ast;** : in these examples, similar to the  **colorCircle\_&ast;**,  the color of each PPM pixel is used to create an SVG `<text/>` element with the same color.  The text for each image is based off of the PPM filename.  A single letter is used to draw one pixel.are 
 * **warhol\_&ast;** : in these examples, the ideas from **circle\_&ast;**  and **colorCircle\_&ast;** are used to create an effect similar to Andy Warhol's Marilyn Monroe series.  The top left is extracted from the red channel of the PPM, the top right is the green channel, the bottom left is the blue channel, and the bottom right is all channels.
 
+## Sample assignment
+
+The **sample_assignment** directory contains an example write-up for an assignment.  It has a
+basic explanation of the PPM and SVG file formats, as well as instructions for two of the possible conversions.
+
 ## Helper code
 
 The **helper_code** directory contains two files, which can help with this assignment.  
